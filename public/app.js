@@ -1,34 +1,13 @@
-// $(".get-news").on("click", function() {
-//     // when they click - we should take all fresh news, put it in db and show it on the page
-//     $.ajax({
-//       type: "POST",
-//       url: "/scrape",
-//       dataType: "json",
-//       data: {
-        
-//       }
-//     })
-//       .then(function(data) {
-//         console.log(data);
-       
-//       }
-//       );
-//     return false;
-//   });
 
-
-  // Grab the articles as a json
-// $.getJSON("/articles", function(data) {
-//     // For each one
-//     for (var i = 0; i < data.length; i++) {
-//       // Display the apropos information on the page
-//       $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
-//     }
-//   });
   
   
   // Whenever someone clicks a p tag
+  $(document).on("click", "#hide-image", function(){
+    document.getElementById("image").style.display = "none";
+  })
   $(document).on("click", "p", function() {
+
+    
     // Empty the notes from the note section
     $("#notes").empty();
     // Save the id from the p tag
