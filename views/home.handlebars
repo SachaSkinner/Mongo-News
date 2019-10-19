@@ -1,0 +1,25 @@
+<div class="jumbotron jumbotron-fluid mt-5">
+    <img class="img-fluid" id="image-nature" src="befunky_layer - Copy.png" alt="">
+
+    <ul>
+        {{#each articles}}
+        <li>
+            <a href="{{link}}">{{title}}</a>
+            <form action="/addnoteform" method="post">
+                <input type="hidden" name="_id" value="{{_id}}">
+                <input type="submit" value="Add Note">
+            </form>
+        </li>
+        {{/each}}
+    </ul>
+
+    {{#if addNote}}
+    <form action="/addnote" method="post">
+        <input type="hidden" name="_id" value="{{article._id}}">
+        Title: <input type="text" name="title"><br>
+        Body: <input type="text" name="body" /> <br>
+        <input type="submit" value="Add Note">
+    </form>
+    {{/if}}
+
+</div>
