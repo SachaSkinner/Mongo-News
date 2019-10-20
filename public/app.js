@@ -1,10 +1,5 @@
 
   
-  
-  // Whenever someone clicks a p tag
-  $(document).on("click", "#hide-image", function(){
-    document.getElementById("image").style.display = "none";
-  })
   $(document).on("click", "p", function() {
 
     
@@ -62,6 +57,7 @@
         console.log(data);
         // Empty the notes section
         $("#notes").empty();
+        res.redirect("/");
       });
   
     // Also, remove the values entered in the input and textarea for note entry

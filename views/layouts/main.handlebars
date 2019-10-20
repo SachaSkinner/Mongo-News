@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
     <style>
-        .my-note {
-            background-color: bisque;
-            color:brown;
+        html,body {
+            height: 100%;
+
         }
         .jumbotron{
 	            
                  text-align: center;
                  padding-top: 30px;
-                 background-image: url('befunky_layer - Copy.png')
+                 background-image: url('befunky_layer - Copy.png');
+                 height: 100%;
                  
         }
         .articles{
@@ -39,9 +40,38 @@
         .article {
             padding-top: 10px;
         }
-        form {
+        .float-right {
             float: right;
             padding-right: 10px;
+        }
+        #note-form {
+            margin-top: 30px;
+            background-color: bisque;
+            color:rgb(27, 26, 26);
+            margin-right: 400px;
+            margin-left: 400px;
+            font-size: 30px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+             border-radius: 50px;
+            
+
+        }
+        #make-big {
+            padding: 30px;
+           
+        }
+        .all-notes {
+             margin-top: 30px;
+            background-color: bisque;
+            color:rgb(27, 26, 26);
+            margin-right: 400px;
+            margin-left: 400px;
+            font-size: 30px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+             border-radius: 50px;
+
         }
         .navbar {
             background-color: rgb(117, 83, 15);
@@ -96,7 +126,7 @@
             </div>
         </div>
     </nav>
-<img class="img-fluid" id="image" src="befunky_layer - Copy.png" alt=""> 
+
     {{{body}}}
 
 

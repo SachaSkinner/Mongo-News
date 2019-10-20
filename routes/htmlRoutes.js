@@ -29,10 +29,10 @@ router.get("/get-notes", function(req, res){
 });
 
 router.post("/addnoteform", function(req, res){
-    pageModel.article._id = req.body._id
-    pageModel.addNote = true
+    pageModel.article._id = req.body._id;
+    pageModel.addNote = true;
 
-    res.redirect("/")
+    res.redirect("/");
 })
 
 router.post("/addnote", function(req, res){
@@ -42,7 +42,12 @@ router.post("/addnote", function(req, res){
                 $push: { note: data._id}
             })
             .then(function(dbData){
-                res.redirect("/")
+                pageModel.addNote = false;
+                res.redirect("/");
+            }, error => {
+                alert("You already have a note for this article")
+                pageModel.addNote = false;
+                res.redirect("/");
             })
         })
 })
@@ -53,6 +58,8 @@ router.get("/delete/:id", function(req, res) {
     db.Note.deleteOne({ _id: req.params.id }, function (err) {
         if (err) return handleError(err);
         console.log("delete one")
+        res.redirect("/get-notes");
+
       });
       
   });

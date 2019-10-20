@@ -1,11 +1,19 @@
 <div class="jumbotron jumbotron-fluid mt-5 text-center">
     
 
+{{#if addNote}}
+    <form id="note-form" action="/addnote" method="post">
+        <input type="hidden" name="_id" value="{{article._id}}">
+        About: <br> <input type="text" name="title"><br>
+        My thoughts..:<br> <input id="make-big" type="text" name="body" /> <br><br>
+        <input type="submit" value="Add Note">
+    </form>
+{{else}}
     <ul class="articles">
         {{#each articles}}
         <li class="article">
             <a href="{{link}}">{{title}}</a>
-            <form action="/addnoteform" method="post">
+            <form class="float-right" action="/addnoteform" method="post">
                 <input type="hidden" name="_id" value="{{_id}}">
 
                 <input type="submit" value="Add Note">
@@ -15,14 +23,7 @@
         </li>
         {{/each}}
     </ul>
-            {{#if addNote}}
-            <form action="/addnote" method="post">
-                <input type="hidden" name="_id" value="{{article._id}}">
-                Title: <input type="text" name="title"><br>
-                Body: <input type="text" name="body" /> <br>
-                <input type="submit" value="Add Note">
-            </form>
-            {{/if}}
+{{/if}}
 
 
 

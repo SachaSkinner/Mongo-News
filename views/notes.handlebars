@@ -1,17 +1,16 @@
-<div class="jumbotron jumbotron-fluid mt-5"></div>
-    
-<ul>
+<div class="jumbotron jumbotron-fluid mt-5 text-center">
+    <ul >
         {{#each notes}}
-        <div class="my-note">
-<p> Title: {{title}}
-</p>
-         <p> Note:  {{body}}</p> 
-        </li>
-         <form action="/delete/{{id}}" method="get">
+        <div class="all-notes">
+            <p> About: {{title}}
+            </p>
+            <p> My thoughts: {{body}}</p>
+            </li>
+            <form action="/delete/{{id}}" method="get">
                 <input type="hidden" name="_id" value="{{_id}}">
                 <input type="submit" value="Delete Note">
             </form>
-        
+
         </div>
         {{/each}}
     </ul>
