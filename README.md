@@ -1,6 +1,6 @@
 # Mongo-News
 ## See the latest news in Chicago! Save your thoughts!
-
+### Technologies used:
  1. express
 
    2. express-handlebars
